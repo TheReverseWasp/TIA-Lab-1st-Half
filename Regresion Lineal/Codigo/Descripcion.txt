@@ -1,0 +1,3 @@
+ex1data2(Home_1f).csv - ”Precio Viviendas”
+petrol_consumption.csv - “Consumo de Petróleo”,
+oceano_simple.csv “Temperatura Océano”.
