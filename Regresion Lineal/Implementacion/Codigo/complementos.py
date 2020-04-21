@@ -36,7 +36,7 @@ def check_type(_type):
     pass_code = False
     while not pass_code:
         try:
-            opcion = _type(opcion2)
+            opcion = _type(opcion)
             pass_code = True
         except:
             print("Error: Entrada Erronea, ingrese la entrada nuevamente")
@@ -49,9 +49,20 @@ def Graficar_recta_y_puntos(X, Y, theta, path_to_save):
     plt.plot(X_line, Y_line)
     plt.scatter(X[1],Y[0])
     plt.savefig(path_to_save)
+    plt.clf()
 
-def Graficar_Costo(lista_Costos, path_to_save):
+def Graficar_Costo_1(lista_Costos, path_to_save):
     X_line = np.arange(0, 3501, 500)
     Y_line = lista_Costos
     plt.plot(X_line, Y_line)
     plt.savefig(path_to_save)
+    plt.clf()
+
+def Graficar_Costo_2(lista_Costos_train, lista_Costos_test, path_to_save, interval = 50):
+    X_line = np.arange(0, 3501, interval)
+    Y_line = lista_Costos_train
+    plt.plot(X_line, Y_line, "b")
+    Y_line = lista_Costos_test
+    plt.plot(X_line, Y_line, "r")
+    plt.savefig(path_to_save)
+    plt.clf()

@@ -37,13 +37,13 @@ def Calcular_Costo(X, theta, Y):
     return Costo
 
 #5
-def Gradiente_Descendiente(X, theta, Y, learning_rate =0.4, iteraciones = 3501):
+def Gradiente_Descendiente(X, theta, Y, learning_rate =0.4, iteraciones = 3501, interval = 500):
     lista_thetas = []
     lista_costos = []
     m = X.shape[1]
-    for i in range(1, iteraciones):
+    for i in range(iteraciones):
         theta = theta - learning_rate * np.sum((np.dot(theta, X) - Y)*X, keepdims = True, axis = 1).T / m
-        if i % 500 == 0:
+        if i % interval == 0:
             J = Calcular_Costo(X, theta, Y)
             #print("Costo en la iteracion " + str(i) + ": " + str(J))
             #print("thetas en la iteracion " + str(i) + ": " + str(theta))
@@ -54,7 +54,7 @@ def Gradiente_Descendiente(X, theta, Y, learning_rate =0.4, iteraciones = 3501):
 #6
 def Ecuacion_Normal(X, Y):
     try:
-        theta = np.dot(np.dot(np.linalg.inv(np.dot(X, X.T)), X), Y.T)
+        theta = np.dot(np.dot(np.linalg.inv(np.dot(X, X.T)), X), Y.T).T
         return theta
     except:
         print("Error: Matriz Singular")
