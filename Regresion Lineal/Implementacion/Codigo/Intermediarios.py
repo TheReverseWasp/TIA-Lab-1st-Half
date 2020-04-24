@@ -16,6 +16,32 @@ def Experimento_1(fixed_datasets, sample_test):
 			J = None
 		Js.append(J)
 	buffer1.append(Js)
+	print(theta)
+	return buffer1
+
+def Experimento_1_X(global_name, train_name, test_name):
+	Js = []
+	np_arr = Leer_Datos(global_name)
+	np_arr, Media, Desviacion = Normalizar_Datos(np_arr)
+	train_data = Leer_Datos(train_name)
+	test_data = Leer_Datos(test_name)
+	train, test = Normalizar_Datos_MD(train_data, Media, Desviacion),  Normalizar_Datos_MD(test_data, Media, Desviacion)
+	train, test = train + 1, test + 1
+	X_train, Y_train = separador(train)
+	X_test, Y_test = separador(test)
+	theta_train = Ecuacion_Normal(X_train, Y_train)
+	theta_test = Ecuacion_Normal(X_test, Y_test)
+	if type(theta_train) != bool or type(theta_test):
+		J = Calcular_Costo(X_train, theta_train, Y_train)
+		Js.append(J)
+		J = Calcular_Costo(X_test, theta_test, Y_test)
+		Js.append(J)
+	else:
+		J = None
+	buffer1 = []
+	buffer1.append(Js)
+	print("train: " + str(theta_train))
+	print("test: " + str(theta_test))
 	return buffer1
 
 def Experimento_2(fixed_datasets, learning_rates):

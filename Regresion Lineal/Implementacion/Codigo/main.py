@@ -5,7 +5,7 @@ def main():
     opcion = 1
     learning_rates = [0.01, 0.05, 0.1, 0.2, 0.4]
     fixed_datasets = ["../Datos/ex1data2(Home_1f).csv", "../Datos/oceano_simple.csv", "../Datos/petrol_consumption.csv"]
-    while opcion <= 4 and opcion > 0:
+    while opcion <= 5 and opcion > 0:
         print("Seleccione el experimento que desea realizar:")
         print("Experimento 1: Mostrar error cuadratico usando Ec. normal de un dataset")
         print("Experimento 2: Buscar mejores parametros de entrenamiento de un dataset")
@@ -43,7 +43,7 @@ def main():
                 train_dataset_name = input()
                 print("Ingrese solo el nombre del dataset de prueba: (en la ubicacion ../Otros_Datos/)")
                 test_dataset_name = input()
-                statistics = Experimento_2_separados("../Otros_Datos/" + train_dataset_name, "../Otros_Datos/" + test_dataset_name, + learning_rates)
+                statistics = Experimento_2_separados("../Otros_Datos/" + train_dataset_name, "../Otros_Datos/" + test_dataset_name, learning_rates)
             print("Resultado:")
             print(statistics)
             with open('../Resultados/Exp2/Resultado2.json', 'w') as json_file:
@@ -84,8 +84,17 @@ def main():
                 test_dataset_name = input("../Otros_Datos/" + train_dataset_name, "../Otros_Datos/" + test_dataset_name, learning_rate)
                 Experimento_4_separados()
             print("Resultados guardados en '../Resultados/Exp4'")
+        elif opcion == 5:
+            print("global")
+            global_name = "../Otros_Datos/" + "global.csv"
+            print("train?")
+            train_name = "../Otros_Datos/" + "train_ex1data1.csv"
+            print("test?")
+            test_name = "../Otros_Datos/" + "test_ex1data1.csv"
+            Experimento_1_X(global_name, train_name, test_name)
         else:
             print("fin del programa")
+
 
 if __name__ == "__main__":
     main()
