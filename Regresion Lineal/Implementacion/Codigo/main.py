@@ -6,12 +6,12 @@ def main():
     learning_rates = [0.01, 0.05, 0.1, 0.2, 0.4]
     fixed_datasets = ["../Datos/ex1data2(Home_1f).csv", "../Datos/oceano_simple.csv", "../Datos/petrol_consumption.csv"]
     while opcion <= 5 and opcion > 0:
-        print("Seleccione el experimento que desea realizar:")
-        print("Experimento 1: Mostrar error cuadratico usando Ec. normal de un dataset")
-        print("Experimento 2: Buscar mejores parametros de entrenamiento de un dataset")
-        print("Experimento 3: Plotear Precio viviendas")
-        print("Experimento 4: Plotear costo de un dataset")
-        print("Experimento 1 pero con los datos de la profesora.")
+        print("Seleccione la opcion que desea realizar:")
+        print("1->Experimento 1: Mostrar error cuadratico usando Ec. normal de un dataset")
+        print("2->Experimento 2: Buscar mejores parametros de entrenamiento de un dataset")
+        print("3->Experimento 3: Plotear Precio viviendas")
+        print("4->Experimento 4: Plotear costo de un dataset")
+        print("5->Experimento 1 pero con los datos de la profesora.")
         opcion = check_type(int)
         #En los experimentos
         if opcion == 1:
