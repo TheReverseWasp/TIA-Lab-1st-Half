@@ -11,6 +11,7 @@ def main():
         print("Experimento 2: Buscar mejores parametros de entrenamiento de un dataset")
         print("Experimento 3: Plotear Precio viviendas")
         print("Experimento 4: Plotear costo de un dataset")
+        print("Experimento 1 pero con los datos de la profesora.")
         opcion = check_type(int)
         #En los experimentos
         if opcion == 1:
