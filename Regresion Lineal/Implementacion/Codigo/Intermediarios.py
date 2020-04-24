@@ -111,7 +111,7 @@ def Experimento_3_separados(train_dataset, test_dataset, learning_rate, iteracio
 	except:
 		print("Error: Los nombres de los datasets son incorrectos")
 		return
-	train, Media, Desviacion = Normalizar_Datosa(train)
+	train, Media, Desviacion = Normalizar_Datos(train)
 	train = train + 1
 	test = Normalizar_Datos_MD(test, Media, Desviacion)
 	test = test + 1

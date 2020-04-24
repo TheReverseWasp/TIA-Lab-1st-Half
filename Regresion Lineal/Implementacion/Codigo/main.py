@@ -82,8 +82,8 @@ def main():
                 print("Ingrese solo el nombre del dataset de entrenamiento: (en la ubicacion ../Otros_Datos/)")
                 train_dataset_name = input()
                 print("Ingrese solo el nombre del dataset de prueba: (en la ubicacion ../Otros_Datos/)")
-                test_dataset_name = input("../Otros_Datos/" + train_dataset_name, "../Otros_Datos/" + test_dataset_name, learning_rate)
-                Experimento_4_separados()
+                test_dataset_name = input()
+                Experimento_4_separados("../Otros_Datos/" + train_dataset_name, "../Otros_Datos/" + test_dataset_name, learning_rate)
             print("Resultados guardados en '../Resultados/Exp4'")
         elif opcion == 5:
             print("global")
