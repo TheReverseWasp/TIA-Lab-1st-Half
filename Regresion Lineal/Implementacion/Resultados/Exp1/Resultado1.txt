@@ -1,0 +1,1 @@
+[[['../Datos/ex1data2(Home_1f).csv', '../Datos/oceano_simple.csv', '../Datos/petrol_consumption.csv']], [3.1282361369550183e-28, 1.00738000215988e-27, 2.0891914879961286e-27]]

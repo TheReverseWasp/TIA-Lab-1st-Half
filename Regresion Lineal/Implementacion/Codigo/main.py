@@ -10,7 +10,7 @@ def main():
         print("Experimento 1: Mostrar error cuadratico usando Ec. normal de un dataset")
         print("Experimento 2: Buscar mejores parametros de entrenamiento de un dataset")
         print("Experimento 3: Plotear Precio viviendas")
-        print("Experimento 4: Plotear petrol_consumptionto de un dataset")
+        print("Experimento 4: Plotear costo de un dataset")
         opcion = check_type(int)
         #En los experimentos
         if opcion == 1:
